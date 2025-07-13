@@ -1,0 +1,10 @@
+[
+  {
+    "name": "big bob",
+    "id": "hid-123",
+    "birthday":"10/05/2000",
+    "historical-records":[{"date":"12/12/2012","description":"bla,bla,bla"}],
+    "clinic": "petak tikva",
+    "owner-contacts-info": [{"email":"a@b.com","phone":"0501234","name":"yosi"}]
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "username": "yosi",
+    "id": "uid-12",
+    "email": "nachliel@example.com",
+    "password": "$2a$10$CP9VFN5bs6VmMQ1VKDROEOTgWnBCrz4SWjRZK3cSGa2cHJmyW5GKy",
+    "clinic" : "petak tikva",
+    "horses": ["hid-123"]
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "id": "sid-200",
+    "horse-id": "hid-123",
+    "vet-id": "uid-123",
+    "report": "bla bla bla bla",
+    "image-urls": [
+      "https://res.cloudinary.com/dnwtfvpef/image/upload/v1752414181/scat_vtyljl.jpg"
+    ],
+    "date-taken": "02/02/2002",
+    "consistency": 5,
+    "dryness": 4,
+    "comments" : "bla bla"
+  }
+]
