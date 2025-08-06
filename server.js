@@ -16,4 +16,4 @@ app.use((err, req, res, next) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Book service listening on port ${port}`));
+app.listen(port, () => console.log(`Scat service listening on port ${port}`));

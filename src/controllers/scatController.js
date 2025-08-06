@@ -22,7 +22,14 @@ async function getScatByHorseId(req, res) {
   }
 }
 
+async function createScat(req,res){
+  
+  console.log("controller.createScat:" , req.body);
+  let horse_id,vet_id,img_urls,img_creation_date,consistency,dryness,comments = req.body;
+}
+
 export default {
+  createScat,
   getScatById,
   getScatByHorseId
 };
