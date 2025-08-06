@@ -25,7 +25,13 @@ async function getScatByHorseId(req, res) {
 async function createScat(req,res){
   
   console.log("controller.createScat:" , req.body);
-  let horse_id,vet_id,img_urls,img_creation_date,consistency,dryness,comments = req.body;
+    try {
+      const scat = await scatService.createScat(req.body);
+      if (!scat) return res.status(404).send({ error: "Not created. Bad data" });
+      res.json(scat);
+    } catch (err) {
+      return res.status(404).send({ error: err });
+    }
 }
 
 export default {

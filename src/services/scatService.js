@@ -10,7 +10,6 @@ const dataPath = path.join(__dirname, "scat-reports.json");
 
 const SCAT_ID_COUNTER_PATH = "scatIdCounter.txt";
 
-var scatIdCounter = 1;
 
 const initializeScatData = async () => {
   try {
@@ -24,8 +23,9 @@ const getScatById = async (id) => {
   console.log("id: ", id);
   await initializeScatData();
   const data = await fs.readFile(dataPath, "utf8");
-  console.log("data: ", data[0]);
-  const scat = data.find((s) => s.id === id);
+  const dataJson = await JSON.parse(data);
+  console.log("data: ", dataJson[0]);
+  const scat = dataJson.find((s) => s.id === id);
   console.log("scat: ", scat);
   return scat;
 };
@@ -38,14 +38,22 @@ const getScatByHorseId = async (id) => {
 };
 
 async function createScat (scatReport){
-  let {hid,uid,img_urls,img_creation_date,consistency,dryness,comments} = scatReport;
-  await utilService.getLastID(SCAT_ID_COUNTER_PATH);
+  const idCounter = await utilService.getAndIncrementID(SCAT_ID_COUNTER_PATH);
+  const newScat = {
+    ...scatReport,
+    id: `sid-${idCounter}`,
+    created_at: new Date(),
+    updated_at: new Date(),
+  };
+  console.log("New Scat:", newScat);
+  //TODO: save to scat-report.json
 }
 
 
 
 
 export const scatService = {
+  createScat,
   getScatById,
   getScatByHorseId,
 };
